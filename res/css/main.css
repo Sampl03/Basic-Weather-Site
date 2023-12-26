@@ -164,6 +164,7 @@ footer > div {
 #hourlyweather {
     background-color: var(--boxes-color);
     border-collapse: collapse;
+    margin: auto;
 }
 
 #hweather-header {

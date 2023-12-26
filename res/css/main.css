@@ -1,0 +1,193 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --accent-color: rgb(15, 15, 15);
+    --boxes-color: rgb(70, 70, 70);
+    --background-color: rgb(45,45,45);
+    --text-color: white;
+    --text-gray-color: rgb(200, 200, 200);
+
+    --border-radius: 15px;
+
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* General Layout */
+
+body {
+    margin: 0px;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--background-color);
+}
+
+body > * {
+    flex-basis: content;
+}
+
+body > section#weatherdata {
+    flex: 1 1 auto;
+}
+
+.topbar {
+    margin: 0px;
+    padding: 0.5em 0px;
+    font-size: 2rem;
+    text-align: center;
+    background-color: var(--accent-color);
+    letter-spacing: 0.25em
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+}
+
+footer > div {
+    border: 5px black;
+    width: fit-content;
+    margin: auto;
+    padding: 0.5rem 2em;
+    border-radius: var(--border-radius);
+    background-color: whitesmoke;
+}
+
+/* Search box Section */
+
+.search {
+    background-color: var(--boxes-color);
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    width: calc(min(70ch, 100% - 2rem));
+}
+
+.search-textbox {
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+}
+
+.error-text {
+    color: red;
+    margin: 10px;
+}
+
+.search-btn {
+    padding: 0.25rem 0.5rem;
+    letter-spacing: 0.25ch;
+}
+
+/* Current weather Section */
+
+.cweather-container {
+    margin: 1rem auto;
+    background-color: var(--boxes-color);
+    border-radius: var(--border-radius);
+    width: calc(min(60ch, 100% - 2rem));
+}
+
+.cweather-container > div:not(:first-child) {
+    padding: 1rem 1rem;
+}
+
+#querytime { color: var(--text-gray-color)}
+
+#location {
+    margin: 0 auto;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    background-color: var(--accent-color);
+}
+
+#temperature, #weathercode {
+    display: inline;
+    margin: 0 auto;
+    vertical-align: middle;
+    margin: 0.2rem;
+}
+
+#temperature {
+    font-size: 2em;
+}
+
+#weathercode {
+    font-size: 1.2em;
+    font-weight: lighter;
+}
+
+.cweather-container h4 {
+    margin: 0.2rem 0;
+}
+
+.cweather-extradata-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.cweather-extradata-container > * {
+    flex: 0 0 auto;
+}
+
+/* Hourly day weather */
+
+.hweather-container {
+    margin: 1rem auto;
+    padding: 1rem;
+    width: calc(min(100ch, 100% - 2rem));
+}
+
+.hweather-container > h2 {
+    background-color: var(--accent-color);
+    margin: 0.5rem auto;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    width: fit-content;
+}
+
+.hweather-container > div {
+    overflow-x: scroll;
+    width: inherit;
+    margin: auto;
+}
+
+#hourlyweather {
+    background-color: var(--boxes-color);
+    border-collapse: collapse;
+}
+
+#hweather-header {
+    background-color: var(--accent-color);
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+#hweather-header th {
+    position: sticky;
+    top: 0;
+}
+
+th, td { padding: 0.5em 1em; }
+
+tr:not(.weather-now) > td { color: var(--text-gray-color) }
+
+.weather-now { font-size: 1.2em; }
+.weather-now > .hourly-row-time { font-weight: bold; }
+
+#querytime::before { content: "As of "; }
+
+.tempmeasure::after { content: "°C"; }
+
+.millimmeasure::after { content: " mm"; }
+
+.percentmeasure::after { content: " %" }

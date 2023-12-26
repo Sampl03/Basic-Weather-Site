@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weather Website</title>
+        <link rel="stylesheet" href="./res/css/main.css">
+        <script type="module" src="./res/scripts/main.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="topbar">Weather Website</h1>
+        </header>
+        <section class="search">
+            <div>
+                <input id="searchbox"
+                       class="search-textbox"
+                       type="text"
+                       placeholder="Search City...">
+            </div>
+            <div id="searcherror" class="error-text"></div>
+            <button class="search-btn"
+                    type="button"
+                    onclick="searchCity();">Search</button>
+        </section>
+        <section id="weatherdata"
+                 class="weather-container"
+                 style="opacity: 0">
+            <section class="cweather-container">
+                <div class="cweather-loc-container">
+                    <h2 id="location">
+                        City
+                    </h2>
+                    <div>
+                        <span id="latitude">00</span> <span id="longitude">00</span>
+                    </div>
+                    <span id="querytime">00h00</span>
+                </div>
+                <div class="cweather-gen-container">
+                    <div>
+                        <h2 id="temperature" class="tempmeasure">X</h2>
+                        <h3 id="weathercode">Weather Code</h3>
+                    </div>
+                    <div>
+                        Feels like 
+                        <span id="feelslike" class="tempmeasure">X</span>
+                    </div>
+                </div>
+                <div class="cweather-extradata-container">
+                    <div>
+                        <h4>Precipitation</h4>
+                        <div id="precipitation" class="millimmeasure">--</div>
+                    </div>
+                    <div>
+                        <h4>Wind</h4>
+                        <div id="wind">--</div>
+                    </div>
+                    <div>
+                        <h4>Cloud Cover</h4>
+                        <div id="cloudcover" class="percentmeasure">--</div>
+                    </div>
+                </div>
+            </section>
+            <section class="hweather-container">
+                <h2>Hourly Weather</h2>
+                <div>
+                    <table id="hourlyweather">
+                        
+                    </table>
+                </div>
+            </section>
+        </section>
+        <footer>
+            <div>
+                <a href="https://open-meteo.com/">Weather data by Open-Meteo.com</a>
+            </div>
+        </footer>
+    </body>
+</html>
